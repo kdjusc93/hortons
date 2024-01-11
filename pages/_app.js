@@ -6,6 +6,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from '../src/theme';
 import AppBar from '../src/AppBar';
+import Footer from '../src/Footer';
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -20,6 +21,7 @@ export default function MyApp(props) {
         <CssBaseline />
         <AppBar></AppBar>
         <Component {...pageProps} />
+        <Footer></Footer>
       </ThemeProvider>
     </AppCacheProvider>
   );

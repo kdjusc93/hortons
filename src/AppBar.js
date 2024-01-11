@@ -32,19 +32,19 @@ function ResponsiveAppBar(props) {
       </Typography>
       <Divider />
       <List>
-        <ListItem key="mabout" disablePadding noLinkStyle
+        <ListItem key="mabout" disablePadding
             component={Link} href="/">
             <ListItemButton sx={{ textAlign: 'center' }}>
               <ListItemText primary="HOME" />
             </ListItemButton>
           </ListItem>
-          <ListItem key="mabout2" disablePadding noLinkStyle
+          <ListItem key="mabout2" disablePadding
             component={Link} href="/about">
             <ListItemButton sx={{ textAlign: 'center' }}>
               <ListItemText primary="ABOUT2" />
             </ListItemButton>
           </ListItem>
-          <ListItem key="mabout3" disablePadding noLinkStyle
+          <ListItem key="mabout3" disablePadding
             component={Link} href="/about">
             <ListItemButton sx={{ textAlign: 'center' }}>
               <ListItemText primary="ABOUT3" />
@@ -79,17 +79,14 @@ function ResponsiveAppBar(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             <Button key="about" sx={{ color: '#fff' }}
-            noLinkStyle
             component={Link} href="/">
                 HOME
             </Button>
             <Button key="about2" sx={{ color: '#fff' }}
-            noLinkStyle
             component={Link} href="/about">
                 ABOUT2
             </Button>
             <Button key="about3" sx={{ color: '#fff' }}
-            noLinkStyle
             component={Link} href="/about">
                 ABOUT3
             </Button>
