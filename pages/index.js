@@ -11,9 +11,12 @@ export default function Index() {
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover', height: '300px', width: '100%', paddingLeft: '0px', margin: '0px', position: 'relative'}}>
-    <Box maxWidth="lg"  sx={{backgroundColor: 'gray', marginLeft: '5%', marginRight: '5%', marginTop: '30px', position: 'absolute', height: '200px', minWidth: 'xs'}}>
-    <Typography variant="h4" component="h1" gutterBottom sx={{padding:'10px'}}>
+    <Box maxWidth="lg"  sx={{backgroundColor:  'rgba(255, 255, 255, .7)' , marginLeft: '5%', marginRight: '5%', marginTop: '30px', position: 'absolute', height: '200px', minWidth: 'xs'}}>
+    <Typography variant="h4" component="h1" gutterBottom sx={{padding:'10px', fontWeight: '400'}}>
           Text Here
+        </Typography>
+        <Typography variant="h5" component="div" gutterBottom sx={{padding:'10px'}}>
+          maybe a button
         </Typography>
     </Box>
         
