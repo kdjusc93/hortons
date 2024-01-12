@@ -60,7 +60,7 @@ function ResponsiveAppBar(props) {
     <React.Fragment>
     <AppBar position="static" component={"nav"} sx={{ backgroundColor: "green"}}>
        <Container maxWidth="xl">
-       <Toolbar disableGutters >
+       <Toolbar disableGutters>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -75,7 +75,7 @@ function ResponsiveAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            LOGO
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             <Button key="about" sx={{ color: '#fff' }}
@@ -91,6 +91,15 @@ function ResponsiveAppBar(props) {
                 ABOUT3
             </Button>
           </Box>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none' }, left: '50%', right: '50%', position: 'absolute' }}
+          >
+            LOGO
+          </IconButton>
         </Toolbar>
         </Container>
       </AppBar>

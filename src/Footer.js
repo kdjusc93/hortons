@@ -18,7 +18,7 @@ function Footer(props) {
       }}>
        <Container  
        sx={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '5px', paddingTop: '5px', width: '100%'
+        display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '5px', paddingTop: '5px', width: '100%', marginBottom: '5px'
         }}>
        <Box 
        sx={{ 
@@ -29,19 +29,19 @@ function Footer(props) {
               <Grid item xs={12} sm={12} md={4}>
               <Button key="about" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                   component={Link} href="/">
-                      1HOME
+                      LINK
                   </Button>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
               <Button key="about2" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                     component={Link} href="/about">
-                        1ABOUT2
+                        LINK
                     </Button>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
               <Button key="about3" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                     component={Link} href="/about">
-                        1ABOUT3
+                        LINK
                     </Button>
               </Grid>
             </Grid>
@@ -49,19 +49,19 @@ function Footer(props) {
               <Grid item xs={12} sm={12} md={4}>
               <Button key="about" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                   component={Link} href="/">
-                      HOME
+                      LINK
                   </Button>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
               <Button key="about2" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                     component={Link} href="/about">
-                        ABOUT2
+                        LINK
                     </Button>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
               <Button key="about3" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                     component={Link} href="/about">
-                        ABOUT3
+                        LINK
                     </Button>
               </Grid>
             </Grid>
@@ -69,25 +69,25 @@ function Footer(props) {
               <Grid item xs={12} sm={12} md={4}>
               <Button key="about" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                   component={Link} href="/">
-                      HOME
+                      LINK
                   </Button>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
               <Button key="about2" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                     component={Link} href="/about">
-                        ABOUT2
+                        LINK
                     </Button>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
               <Button key="about3" sx={{ color: '#fff',alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                     component={Link} href="/about">
-                        ABOUT3
+                        LINK
                     </Button>
               </Grid>
             </Grid>
             <Grid container item spacing={1}>
               <Grid item xs={12} sm={12} md={12}>
-              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty</Typography>
+              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>word word word word word word word word word word</Typography>
               </Grid>
             </Grid>
             <Grid container item spacing={1}>
