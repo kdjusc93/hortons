@@ -21,6 +21,44 @@ const businessNameShrt = "Horton\'s Honey-Do"
 const logoAltText = "Horton\'s Honey-Do and Handyman Services Logo"
 const logo_path = "public/logo.png"
 
+const links = [
+  {
+    name: "HOME",
+    hrefPath: "/",
+  },
+  {
+    name: "ABOUT US",
+    hrefPath: "/about",
+  },
+  {
+    name: "SERVICES",
+    hrefPath: "/services",
+  },
+  {
+    name: "CONTACT",
+    hrefPath: "/contact",
+  }
+]
+
+let appbarLinksDisplay = links.map(function(link) {
+  return (
+    <Button key={link.name} color='primary' component={Link} href={link.hrefPath}>
+        {link.name}
+    </Button>
+  );
+});
+
+let appDrawerLinksDisplay = links.map(function(link) {
+  return (
+    <ListItem key={link.name} disablePadding
+      component={Link} href={link.hrefPath}>
+      <ListItemButton sx={{ textAlign: 'center' }}>
+        <ListItemText primary={link.name} />
+      </ListItemButton>
+    </ListItem>
+  );
+});
+
 function ResponsiveAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -36,24 +74,7 @@ function ResponsiveAppBar(props) {
       </Typography>
       <Divider />
       <List>
-        <ListItem key="mabout" disablePadding
-            component={Link} href="/">
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="HOME" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem key="mabout2" disablePadding
-            component={Link} href="/about">
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="ABOUT2" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem key="mabout3" disablePadding
-            component={Link} href="/about">
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="ABOUT3" />
-            </ListItemButton>
-          </ListItem>
+        { appDrawerLinksDisplay }
       </List>
     </Box>
   );
@@ -62,60 +83,51 @@ function ResponsiveAppBar(props) {
 
   return (
     <React.Fragment>
-    <AppBar position="static" component={"nav"} sx={{ backgroundColor: "white"}}>
-       <Container maxWidth="xl">
-       <Toolbar disableGutters>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Box
-            component="img"
-            sx={{
-              height: 170,
-              width: 200,
-              maxHeight: { xs: 170, md: 170 },
-              maxWidth: { xs: 200, md: 200 },
-            }}
-            alt={logoAltText}
-            src="/logo_withText.png"
-          />
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            {/* {businessName} */}
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <Button key="about" color='primary'
-            component={Link} href="/">
-                HOME
-            </Button>
-            <Button key="about2" color='primary'
-            component={Link} href="/about">
-                ABOUT2
-            </Button>
-            <Button key="about3" color='primary'
-            component={Link} href="/about">
-                ABOUT3
-            </Button>
-          </Box>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' }, left: '50%', right: '50%', position: 'absolute' }}
-          >
-            {businessNameShrt}
-          </IconButton>
-        </Toolbar>
+      <AppBar 
+        position="static" 
+        component={"nav"} 
+        sx={{ backgroundColor: "white"}}>
+        <Container maxWidth="lg">
+          <Toolbar disableGutters>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: 'none' } }}
+            >
+              <MenuIcon color='primary'/>
+            </IconButton>
+            {/****************************************************************
+              Really want the image centered on xs but couldn't figure it out
+            *****************************************************************/}
+            <Box
+              component="img"
+              sx={{
+                height: 170,
+                width: 200,
+                maxHeight: { xs: 170, md: 170 },
+                maxWidth: { xs: 200, md: 200 },
+                justifyContent: { xs: 'center' }, // not working
+              }}
+              alt={logoAltText}
+              src="/logo_withText.png"
+            />
+            {/****************************************************************
+              If I took out below it messed up the alignment of the AppBar
+              buttons links. Need to Revisit how to properly remove!
+            *****************************************************************/}
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            >
+              {/* {businessName} */}
+            </Typography>
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              { appbarLinksDisplay }
+            </Box>
+          </Toolbar>
         </Container>
       </AppBar>
       <nav>
@@ -135,7 +147,7 @@ function ResponsiveAppBar(props) {
           {drawer}
         </Drawer>
       </nav>
-      </React.Fragment>
+    </React.Fragment>
   );
 }
 export default ResponsiveAppBar;

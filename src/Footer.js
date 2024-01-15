@@ -13,7 +13,7 @@ function Footer(props) {
   return (
     <React.Fragment>
     <AppBar position="static" component={"nav"} 
-      color='secondary'
+      color='primary'
       sx={{ 
         minHeight: '150px', position: '', bottom: 0, marginTop: "32px"
       }}>
@@ -28,19 +28,19 @@ function Footer(props) {
           <Grid container item spacing={1} sx={{m:2}} columns={12}>
             <Grid container item spacing={1}>
               <Grid item xs={12} sm={12} md={4}>
-              <Button key="about" sx={{ color: '#000', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
+              <Button key="about" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                   component={Link} href="/">
                       LINK
                   </Button>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
-              <Button key="about2" sx={{ color: '#000', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
+              <Button key="about2" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                     component={Link} href="/about">
                         LINK
                     </Button>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
-              <Button key="about3" sx={{ color: '#000', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
+              <Button key="about3" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                     component={Link} href="/about">
                         LINK
                     </Button>
@@ -48,19 +48,19 @@ function Footer(props) {
             </Grid>
             <Grid container item spacing={1}>
               <Grid item xs={12} sm={12} md={4}>
-              <Button key="about" sx={{ color: '#000', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
+              <Button key="about" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                   component={Link} href="/">
                       LINK
                   </Button>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
-              <Button key="about2" sx={{ color: '#000', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
+              <Button key="about2" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                     component={Link} href="/about">
                         LINK
                     </Button>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
-              <Button key="about3" sx={{ color: '#000', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
+              <Button key="about3" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                     component={Link} href="/about">
                         LINK
                     </Button>
@@ -68,19 +68,19 @@ function Footer(props) {
             </Grid>
             <Grid container item spacing={1}>
               <Grid item xs={12} sm={12} md={4}>
-              <Button key="about" sx={{ color: '#000', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
+              <Button key="about" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                   component={Link} href="/">
                       LINK
                   </Button>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
-              <Button key="about2" sx={{ color: '#000', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
+              <Button key="about2" sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                     component={Link} href="/about">
                         LINK
                     </Button>
               </Grid>
               <Grid item xs={12} sm={12} md={4}>
-              <Button key="about3" sx={{ color: '#000',alignContent: 'center', justifyContent: 'center', display: 'flex' }}
+              <Button key="about3" sx={{ color: '#fff',alignContent: 'center', justifyContent: 'center', display: 'flex' }}
                     component={Link} href="/about">
                         LINK
                     </Button>
@@ -88,18 +88,18 @@ function Footer(props) {
             </Grid>
             <Grid container item spacing={1}>
               <Grid item xs={12} sm={12} md={12}>
-              <Typography sx={{ color: '#000', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>word word word word word word word word word word</Typography>
+              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>word word word word word word word word word word</Typography>
               </Grid>
             </Grid>
             <Grid container item spacing={1}>
               <Grid item xs={4} sm={12} md={4}>
-              <Typography sx={{ color: '#000', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>logo</Typography>
+              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>logo</Typography>
               </Grid>
               <Grid item xs={4} sm={12} md={4}>
-              <Typography sx={{ color: '#000', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>logo</Typography>
+              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>logo</Typography>
               </Grid>
               <Grid item xs={4} sm={12} md={4}>
-              <Typography sx={{ color: '#000', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>logo</Typography>
+              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>logo</Typography>
               </Grid>
             </Grid>
           </Grid>
