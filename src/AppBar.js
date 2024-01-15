@@ -14,9 +14,12 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import theme from './theme';
 
 const drawerWidth = 240;
+const businessName = "Horton\'s Honey-Do and Handyman Services"
+const businessNameShrt = "Horton\'s Honey-Do"
+const logoAltText = "Horton\'s Honey-Do and Handyman Services Logo"
+const logo_path = "public/logo.png"
 
 function ResponsiveAppBar(props) {
   const { window } = props;
@@ -29,7 +32,7 @@ function ResponsiveAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        {businessNameShrt}
       </Typography>
       <Divider />
       <List>
@@ -59,7 +62,7 @@ function ResponsiveAppBar(props) {
 
   return (
     <React.Fragment>
-    <AppBar position="static" component={"nav"} color="primary">
+    <AppBar position="static" component={"nav"} sx={{ backgroundColor: "white"}}>
        <Container maxWidth="xl">
        <Toolbar disableGutters>
           <IconButton
@@ -71,23 +74,34 @@ function ResponsiveAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
+          <Box
+            component="img"
+            sx={{
+              height: 170,
+              width: 200,
+              maxHeight: { xs: 170, md: 170 },
+              maxWidth: { xs: 200, md: 200 },
+            }}
+            alt={logoAltText}
+            src="/logo_withText.png"
+          />
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            LOGO
+            {/* {businessName} */}
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <Button key="about" sx={{ color: '#fff' }}
+            <Button key="about" color='primary'
             component={Link} href="/">
                 HOME
             </Button>
-            <Button key="about2" sx={{ color: '#fff' }}
+            <Button key="about2" color='primary'
             component={Link} href="/about">
                 ABOUT2
             </Button>
-            <Button key="about3" sx={{ color: '#fff' }}
+            <Button key="about3" color='primary'
             component={Link} href="/about">
                 ABOUT3
             </Button>
@@ -99,7 +113,7 @@ function ResponsiveAppBar(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' }, left: '50%', right: '50%', position: 'absolute' }}
           >
-            LOGO
+            {businessNameShrt}
           </IconButton>
         </Toolbar>
         </Container>
