@@ -16,10 +16,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 
 const drawerWidth = 240;
-const businessName = "Horton\'s Honey-Do and Handyman Services"
 const businessNameShrt = "Horton\'s Honey-Do"
 const logoAltText = "Horton\'s Honey-Do and Handyman Services Logo"
-const logo_path = "public/logo.png"
 
 const links = [
   {
@@ -50,8 +48,11 @@ let appbarLinksDisplay = links.map(function(link) {
 
 let appDrawerLinksDisplay = links.map(function(link) {
   return (
-    <ListItem key={link.name} disablePadding
-      component={Link} href={link.hrefPath}>
+    <ListItem 
+      key={link.name} 
+      disablePadding
+      component={Link} 
+      href={link.hrefPath}>
       <ListItemButton sx={{ textAlign: 'center' }}>
         <ListItemText primary={link.name} />
       </ListItemButton>
@@ -69,11 +70,18 @@ function ResponsiveAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        {businessNameShrt}
-      </Typography>
+      <Box
+        component="img"
+        sx={{
+          height: 70,
+          maxHeight: { xs: 40, md: 60 },
+          m: 2
+        }}
+        alt={logoAltText}
+        src="/logo_TextOnly.png"
+      />
       <Divider />
-      <List>
+      <List >
         { appDrawerLinksDisplay }
       </List>
     </Box>
@@ -98,35 +106,39 @@ function ResponsiveAppBar(props) {
             >
               <MenuIcon color='primary'/>
             </IconButton>
-            {/****************************************************************
-              Really want the image centered on xs but couldn't figure it out
-            *****************************************************************/}
             <Box
               component="img"
               sx={{
-                height: 170,
-                width: 200,
-                maxHeight: { xs: 170, md: 170 },
-                maxWidth: { xs: 200, md: 200 },
-                justifyContent: { xs: 'center' }, // not working
+                height: 80,
+                maxHeight: { sm: 55, md: 80 },
+                my: 1,
+                alignContent: {xs: 'center'}
               }}
               alt={logoAltText}
-              src="/logo_withText.png"
+              src="/logo.png"
             />
-            {/****************************************************************
-              If I took out below it messed up the alignment of the AppBar
-              buttons links. Need to Revisit how to properly remove!
-            *****************************************************************/}
+            <Box
+              component="img"
+              sx={{
+                height: 70,
+                maxHeight: { xs: 40, md: 60 },
+                m: 2,
+                display: { xs: 'none', sm: 'block' }
+              }}
+              alt={logoAltText}
+              src="/logo_TextOnly.png"
+            />
             <Typography
               variant="h6"
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             >
-              {/* {businessName} */}
             </Typography>
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <Typography 
+              variant="h6"
+              sx={{ display: { xs: 'none', sm: 'block' } }}>
               { appbarLinksDisplay }
-            </Box>
+            </Typography>
           </Toolbar>
         </Container>
       </AppBar>
