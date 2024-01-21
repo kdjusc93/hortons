@@ -12,10 +12,13 @@ const roboto = Roboto({
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      main: '#358f7a', // Darker Green in Kiwi
     },
     secondary: {
-      main: '#19857b',
+      main: '#57d6b9', // Lighter Green in Kiwi
+    },
+    appBackgroundColor: {
+      main: 'white'
     },
     error: {
       main: red.A400,

@@ -13,8 +13,9 @@ function Footer(props) {
   return (
     <React.Fragment>
     <AppBar position="static" component={"nav"} 
-    sx={{ 
-      backgroundColor: "green", minHeight: '150px', position: '', bottom: 0, marginTop: "32px"
+      color='primary'
+      sx={{ 
+        minHeight: '150px', position: '', bottom: 0, marginTop: "32px"
       }}>
        <Container  
        sx={{
