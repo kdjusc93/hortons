@@ -125,8 +125,7 @@ function ResponsiveAppBar(props) {
                 my: 1,
                 display: { xs: 'block', sm: 'none' },
                 position: 'absolute',
-                left: '50%',
-                right: '50%'
+                left: '45%',
               }}
               alt={logoAltText}
               src="/logo.png"
