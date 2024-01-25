@@ -102,7 +102,7 @@ function ResponsiveAppBar(props) {
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: 'none' } }}
+              sx={{ display: { sm: 'none' } }}
             >
               <MenuIcon color='primary'/>
             </IconButton>
@@ -112,7 +112,21 @@ function ResponsiveAppBar(props) {
                 height: 80,
                 maxHeight: { sm: 55, md: 80 },
                 my: 1,
-                alignContent: {xs: 'center'}
+                display: { xs: 'none', sm: 'block' }
+              }}
+              alt={logoAltText}
+              src="/logo.png"
+            />
+            <Box
+              component="img"
+              sx={{
+                height: 70,
+                maxHeight: 50,
+                my: 1,
+                display: { xs: 'block', sm: 'none' },
+                position: 'absolute',
+                left: '50%',
+                right: '50%'
               }}
               alt={logoAltText}
               src="/logo.png"

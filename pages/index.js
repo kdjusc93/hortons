@@ -4,21 +4,23 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Link from '../src/Link';
 import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+
 
 export default function Index() {
   return (
-    <Container maxWidth={false} sx={{minHeight: '800px', width: '100%', margin: '0px', backgroundColor: 'rgba(87,214,185,255)'}} disableGutters>
+    <Container maxWidth={false} sx={{minHeight: '900px', width: '100%', margin: '0px', backgroundColor: 'black'}} disableGutters>
       <Box sx={{backgroundImage: 'url(/tools.jpg)',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover', height: '300px', width: '100%', paddingLeft: '0px', margin: '0px', position: 'relative'}}>
-    <Box maxWidth="lg"  sx={{backgroundColor:  'rgba(255, 255, 255, .7)' , marginLeft: '5%', marginRight: '5%', marginTop: '30px', position: 'absolute', height: '200px', minWidth: 'xs'}}>
-    <Typography variant="h4" component="h1" gutterBottom sx={{padding:'10px', fontWeight: '400'}}>
-          Text Here
+    <Box maxWidth="lg"  sx={{backgroundColor:  'rgba(255, 255, 255, .7)' , marginLeft: '5%', marginRight: '5%', marginTop: '30px', position: 'absolute', height: '200px', minWidth: 'xs', padding: '10px'}}>
+    <Typography variant="h4" component="h1" gutterBottom>
+         Get your free estimate now!
         </Typography>
-        <Typography variant="h5" component="div" gutterBottom sx={{padding:'10px'}}>
-          maybe a button for an action here
-        </Typography>
+        <Button variant="contained" component={Link} noLinkStyle href="/about">
+          contact us!
+        </Button>
     </Box>
         
       </Box>

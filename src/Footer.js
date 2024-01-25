@@ -15,7 +15,7 @@ function Footer(props) {
     <AppBar position="static" component={"nav"} 
       color='primary'
       sx={{ 
-        minHeight: '150px', position: '', bottom: 0, marginTop: "32px"
+        minHeight: '150px', position: '', bottom: 0, marginTop: "0px"
       }}>
        <Container  
        sx={{
