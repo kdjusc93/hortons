@@ -13,31 +13,77 @@ export default function Contact() {
 
   const formSubmitText = "Thank you for reaching out to us. Make sure to send the email we created for you. We will make sure to reach out to you soon!"
   const [name, setName] = useState('');
+  // Email
   const [email, setEmail] = useState('');
+  const [emailHelperText, setEmailHelperText] = useState('');
+  const [emailError, setEmailError] = useState(false);
+  // Phone
   const [phone, setPhone] = useState('');
+  const [phoneHelperText, setPhoneHelperText] = useState('');
+  const [phoneError, setPhoneError] = useState(false);
+
   const [note, setNote] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const validateFormInputs = ({email, name, phone, })
+  const emailIsValid = (email) => {
+    
+    setEmail(email);
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const emailValid = emailRegex.test(email);
+
+    if (emailValid) {
+      setEmailError(false);
+      setEmailHelperText('');
+    } else {
+      setEmailError(true);
+      setEmailHelperText('Email is Invalid!');
+    }
+
+    return emailValid;
+  }
+
+  const phoneIsValid = (phone) => {
+    
+    setPhone(phone);
+    const phoneRegex = /^[0-9()-+- ]+$/;
+    const phoneValid = phoneRegex.test(phone);
+
+    if (phoneValid) {
+      setPhoneError(false);
+      setPhoneHelperText('');
+    } else {
+      setPhoneError(true);
+      setPhoneHelperText('Phone Number is Invalid!');
+    }
+
+    return phoneValid;
+  }
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const isValid = !(emailError) & !(phoneError);
 
+    console.log(`$$$$$$$ emailError: ${emailError}`)
+    console.log(`$$$$$$$ phoneError: ${phoneError}`)
+    console.log(`$$$$$$$ isValid: ${isValid}`)
 
-    const businessEmail = 'rosseaton92@gmail.com'
-    const emailSubject = `Contact Us Form Submission from ${name}`;
-    const emailBody = `Email Body`;
+    if(isValid) {
+      const businessEmail = 'rosseaton92@gmail.com'
+      const emailSubject = `Contact Us Form Submission from ${name}`;
+      const emailBody = `Email Body`;
 
-    console.log('Form Submitted!!');
+      console.log('Form Submitted!!');
 
-    console.log(`Name: ${name}`);
-    console.log(`Email: ${email}`);
-    console.log(`Phone: ${phone}`);
+      console.log(`Name: ${name}`);
+      console.log(`Email: ${email}`);
+      console.log(`Phone: ${phone}`);
 
-    window.open(`mailto:${businessEmail}?subject=${emailSubject}&body=${emailBody}`);
+      window.open(`mailto:${businessEmail}?subject=${emailSubject}&body=${emailBody}`);
 
-    setFormSubmitted(true);
+      setFormSubmitted(true);
+    }
   }
 
 
@@ -76,13 +122,15 @@ export default function Contact() {
           <br/>
           <TextField
             required
+            error={emailError}
             sx={{
               pb: 4
             }}
             id="email-textfield"
+            helperText={emailHelperText}
             label="Email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => emailIsValid(e.target.value)}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -95,10 +143,12 @@ export default function Contact() {
           <br/>
           <TextField
             required
+            error={phoneError}
             id="phone-textfield"
+            helperText={phoneHelperText}
             label="Phone Number"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => phoneIsValid(e.target.value)}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
