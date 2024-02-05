@@ -4,9 +4,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-// import { FormControl } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
-import { AccountCircle, Email, Phone } from '@mui/icons-material';
+import { AccountCircle, EditNote, Email, Phone } from '@mui/icons-material';
 
 
 export default function Contact() {
@@ -22,7 +21,7 @@ export default function Contact() {
   const [phoneHelperText, setPhoneHelperText] = useState('');
   const [phoneError, setPhoneError] = useState(false);
 
-  const [note, setNote] = useState('');
+  const [projectDetails, setProjectDetails] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const emailIsValid = (email) => {
@@ -65,14 +64,10 @@ export default function Contact() {
 
     const isValid = !(emailError) & !(phoneError);
 
-    console.log(`$$$$$$$ emailError: ${emailError}`)
-    console.log(`$$$$$$$ phoneError: ${phoneError}`)
-    console.log(`$$$$$$$ isValid: ${isValid}`)
-
     if(isValid) {
       const businessEmail = 'rosseaton92@gmail.com'
-      const emailSubject = `Contact Us Form Submission from ${name}`;
-      const emailBody = `Email Body`;
+      const emailSubject = `Contact Us Form Submission from -- ${name}`;
+      const emailBody = `${projectDetails}`;
 
       console.log('Form Submitted!!');
 
@@ -89,16 +84,26 @@ export default function Contact() {
 
   return (
     <Container maxWidth="md" sx={{}}>
-      <Box sx={{
-        backgroundColor: 'lightgray', 
-        my: 8, 
-        borderRadius: 2, 
-        padding: '2%'
-      }}>
-        <Typography variant="h4" component="h1" gutterBottom>
+      <Box 
+        sx={{
+          textAlign: 'center',
+          backgroundColor: 'lightgray', 
+          my: 8, 
+          borderRadius: 2, 
+          padding: '1%'
+        }}
+      >
+        <Typography 
+          variant="h3" 
+          component="h1" 
+          gutterBottom
+          sx={{
+            pt: 2,
+            pb: 4
+          }}
+        >
           Contact Us
         </Typography>
-
         { formSubmitted ? <div>{formSubmitText}</div> :
         <form onSubmit={handleSubmit}>
           <TextField
@@ -144,6 +149,9 @@ export default function Contact() {
           <TextField
             required
             error={phoneError}
+            sx={{
+              
+            }}
             id="phone-textfield"
             helperText={phoneHelperText}
             label="Phone Number"
@@ -159,8 +167,37 @@ export default function Contact() {
             variant="outlined"
           />
           <br/>
+          <TextField
+            required
+            fullWidth
+            multiline
+            rows={4}
+            sx={{
+              p: 2
+            }}
+            id="projectDetails-textfield"
+            placeholder="Provide us any details about your project."
+            label="Project Details"
+            value={projectDetails}
+            onChange={(e) => setProjectDetails(e.target.value)}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <EditNote />
+                </InputAdornment>
+              ),
+            }}
+            variant="outlined"
+          />
           <br/>
-          <Button variant="contained" type='submit'>Submit</Button>
+          <Button 
+            variant="contained" 
+            type='submit'
+            sx={{
+              mb: 2
+            }}
+          >Submit</Button>
+          <br/>
         </form>
         }
       </Box>
