@@ -9,7 +9,8 @@ import Button from '@mui/material/Button';
 
 export default function Index() {
   return (
-    <Container maxWidth={false} sx={{minHeight: '900px', width: '100%', margin: '0px', backgroundColor: 'black'}} disableGutters>
+    <React.Fragment>
+    <Container maxWidth={false} sx={{minHeight: '300px', width: '100%', margin: '0px', backgroundColor: 'white'}} disableGutters>
       <Box sx={{backgroundImage: 'url(/tools.jpg)',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
@@ -18,45 +19,62 @@ export default function Index() {
     <Typography variant="h4" component="h1" gutterBottom>
          Get your free estimate now!
         </Typography>
-        <Button variant="contained" component={Link} noLinkStyle href="/about">
+        <Button variant="contained" component={Link} noLinkStyle href="/contact">
           contact us!
         </Button>
     </Box>
         
       </Box>
-      <Box key="box2" maxWidth="lg" sx={{ minHeight: '200px', marginLeft: '5%', marginRight: '5%', marginTop: '30px', display: 'flex' }} gutterBottom flexWrap={true}>
-        <Paper elevation={10} square={false} sx={{minHeight: '200px', backgroundColor: 'lightgray', padding: '10px'}}>
-        <Typography variant="h4" component="h1">
-        that secondary color from the logo might not be the best background color for the website haha
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        </Paper>
-      </Box>
-      <Box key="box3" maxWidth="md" sx={{ minHeight: '200px', marginLeft: '5%', marginRight: '5%', marginTop: '30px', display: 'flex', padding: '5px' }} gutterBottom flexWrap={true}>
-        <Paper elevation={10} square={false} sx={{minHeight: '200px', backgroundColor: 'lightgray'}}>
-        <Typography variant="h4" component="h1">
-          text text text text text text text
-          <Link href="/about" color="secondary" gutterBottom>
-          Go to the about page
-        </Link>
-        </Typography>
-        
-        </Paper>
-      </Box>
-      <Box key="box4" sx={{ minHeight: '200px', marginLeft: '5%', marginRight: '5%', marginTop: '30px', left:'50%', right:'50%', display: 'flex', justifyContent: 'center' }} gutterBottom>
-        <Paper elevation={10} square={false} sx={{minHeight: '200px', backgroundColor: 'lightgray'}}>
-        <Typography variant="h4" component="h1">
-        text text text text text text text
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        </Paper>
-      </Box>
-      
       <br/>
     </Container>
+    <Container maxWidth="md" sx={{minHeight: '600px'}}>
+    <Box 
+      sx={{
+        textAlign: 'center',
+        backgroundColor: 'lightgray', 
+        my: 8, 
+        borderRadius: 2, 
+        padding: '1%',
+        border: '4px solid',
+        borderColor: '#358f7a'
+      }}
+    >
+      <Typography 
+        variant="h3" 
+        component="h1" 
+        gutterBottom
+        sx={{
+          pt: 2,
+          pb: 4
+        }}
+      >
+        Section
+      </Typography>
+    </Box>
+    <Box 
+      sx={{
+        textAlign: 'center',
+        backgroundColor: 'lightgray', 
+        my: 8, 
+        borderRadius: 2, 
+        padding: '1%',
+        border: '4px solid',
+        borderColor: '#358f7a'
+      }}
+    >
+      <Typography 
+        variant="h3" 
+        component="h1" 
+        gutterBottom
+        sx={{
+          pt: 2,
+          pb: 4
+        }}
+      >
+        Section
+      </Typography>
+    </Box>
+  </Container>
+  </React.Fragment>
   );
 }

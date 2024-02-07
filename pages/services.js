@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Link from '../src/Link';
 
-export default function About() {
+export default function Services() {
   return (
     <Container maxWidth="md" sx={{minHeight: '600px'}}>
       <Box 
@@ -28,7 +28,7 @@ export default function About() {
             pb: 4
           }}
         >
-          About Us
+          Services
         </Typography>
       </Box>
     </Container>

@@ -25,7 +25,7 @@ const links = [
     hrefPath: "/",
   },
   {
-    name: "ABOUT US",
+    name: "ABOUT",
     hrefPath: "/about",
   },
   {
