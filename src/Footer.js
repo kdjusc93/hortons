@@ -19,7 +19,7 @@ function Footer(props) {
       }}>
        <Container  
        sx={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '5px', paddingTop: '5px', width: '100%', marginBottom: '5px'
+        display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '0px', paddingTop: '20px', width: '100%', marginBottom: '40px'
         }}>
        <Box 
        sx={{ 
