@@ -8,7 +8,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { AccountCircle, EditNote, Email, Phone } from '@mui/icons-material';
 
 
-export default function Contact() {
+export default function Contact(props) {
 
   const formSubmitText = "Thank you for reaching out to us. Make sure to send the email we created for you. We will make sure to reach out to you soon!"
   const [name, setName] = useState('');
@@ -83,14 +83,16 @@ export default function Contact() {
 
 
   return (
-    <Container maxWidth="md" sx={{}}>
+    <Container maxWidth="md" sx={{minHeight: '600px'}}>
       <Box 
         sx={{
           textAlign: 'center',
           backgroundColor: 'lightgray', 
           my: 8, 
           borderRadius: 2, 
-          padding: '1%'
+          padding: '1%',
+          border: '4px solid',
+          borderColor: '#358f7a'
         }}
       >
         <Typography 
