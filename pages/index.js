@@ -32,11 +32,11 @@ export default function Index() {
     },
     {
       img: 'minor_electrical.png',
-      title: 'Minor Electrical',
+      title: 'Electrical',
     },
     {
       img: 'minor_plumbing.png',
-      title: 'Minor Plumbing',
+      title: 'Plumbing',
     },
     {
       img: 'gutter_cleaning.png',

@@ -6,9 +6,16 @@ import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+
 import { Typography } from '@mui/material';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 function Footer(props) {
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
+  };
 
   return (
     <React.Fragment>
@@ -19,7 +26,7 @@ function Footer(props) {
       }}>
        <Container  
        sx={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '0px', paddingTop: '20px', width: '100%', marginBottom: '40px'
+        display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '0px', paddingTop: '20px', width: '100%', marginBottom: '0px'
         }}>
        <Box 
        sx={{ 
@@ -54,20 +61,36 @@ function Footer(props) {
             </Grid>
         
             
+          
             <Grid container item spacing={1}>
-              <Grid item xs={12} sm={12} md={12}>
-              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>word word word word word word word word word word</Typography>
+              <Grid item xs={6}>
+              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>
+                <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+            >
+              <a style={{ textDecoration: 'none', color: 'white' }} href="tel:+4733378901"><LocalPhoneIcon/></a>
+                
+            </IconButton>
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>
+              <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+            >
+              <a style={{ textDecoration: 'none', color: 'white' }} href="mailto:abc@example.com"><MailOutlineIcon/></a>
+               
+            </IconButton>
+                </Typography>
               </Grid>
             </Grid>
             <Grid container item spacing={1}>
-              <Grid item xs={4} sm={12} md={4}>
-              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>Phone</Typography>
-              </Grid>
-              <Grid item xs={4} sm={12} md={4}>
-              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>FACEBOOK</Typography>
-              </Grid>
-              <Grid item xs={4} sm={12} md={4}>
-              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>SOCIAL</Typography>
+              <Grid item xs={12} sm={12} md={12}>
+              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>&copy; Copyright 2024</Typography>
               </Grid>
             </Grid>
           </Grid>
