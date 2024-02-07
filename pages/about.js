@@ -22,13 +22,24 @@ export default function About() {
         <Typography 
           variant="h3" 
           component="h1" 
-          gutterBottom
           sx={{
             pt: 2,
-            pb: 4
+            pb: 1
           }}
         >
           About Us
+        </Typography>
+        <br/>
+        <Typography  
+          gutterBottom
+          sx={{
+            pt: 1,
+            pb: 4,
+            fontWeight : '400',
+            fontSize: '20px'
+          }}
+        >
+        With over 10 years of experience in the construction trade, I offer a wide range of services in the Marietta area. From minor electrical work like installing new receptacles, ceiling fans, and lights, to minor plumbing tasks such as sink and faucet replacements, I've got you covered. Need help with gutter cleaning or installation? I can handle that too! Plus, I specialize in home repairs, including door installation, LVP floor installation, picture and TV hanging, furniture assembly, and general clean up. Don't forget, I also do interior and exterior painting! Rest assured, I am insured. Feel free to reach out for a free estimate. Let's get your honey-do list done!
         </Typography>
       </Box>
     </Container>
