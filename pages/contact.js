@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import { AccountCircle, EditNote, Email, Phone } from '@mui/icons-material';
+import { AccountCircle, Article, Email, Phone } from '@mui/icons-material';
 
 
 export default function Contact() {
@@ -58,6 +58,23 @@ export default function Contact() {
     return phoneValid;
   }
 
+  const emailBodyBuilder = (projectDetails, email, phone) => {
+
+    let fullBodyText = '';
+    const urlEncodedNewline = '%0A'
+
+    fullBodyText += projectDetails;
+    fullBodyText += '\n';
+    fullBodyText += '\n';
+    fullBodyText += '== Contact Info ==';
+    fullBodyText += '\n';
+    fullBodyText += `Email: ${email}`;
+    fullBodyText += '\n';
+    fullBodyText += `Phone: ${phone}`;
+
+    // Must URL encode newlines for mailto later
+    return fullBodyText.replaceAll('\n', urlEncodedNewline);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,7 +82,7 @@ export default function Contact() {
     const isValid = !(emailError) & !(phoneError);
 
     if(isValid) {
-      const businessEmail = 'rosseaton92@gmail.com'
+      const businessEmail = 'nrhorton432@gmail.com'
       const emailSubject = `Contact Us Form Submission from -- ${name}`;
       const emailBody = `${projectDetails}`;
 
@@ -75,12 +92,11 @@ export default function Contact() {
       console.log(`Email: ${email}`);
       console.log(`Phone: ${phone}`);
 
-      window.open(`mailto:${businessEmail}?subject=${emailSubject}&body=${emailBody}`);
+      window.open(`mailto:${businessEmail}?subject=${emailSubject}&body=${emailBodyBuilder(projectDetails, email, phone)}`);
 
       setFormSubmitted(true);
     }
   }
-
 
   return (
     <Container maxWidth="md" sx={{}}>
@@ -90,7 +106,9 @@ export default function Contact() {
           backgroundColor: 'lightgray', 
           my: 8, 
           borderRadius: 2, 
-          padding: '1%'
+          padding: '1%',
+          border: 2,
+          borderColor: '#358f7a' // primary wasn't working so just did hex
         }}
       >
         <Typography 
@@ -98,8 +116,8 @@ export default function Contact() {
           component="h1" 
           gutterBottom
           sx={{
-            pt: 2,
-            pb: 4
+            px: 4,
+            py: 2
           }}
         >
           Contact Us
@@ -108,11 +126,13 @@ export default function Contact() {
         <form onSubmit={handleSubmit}>
           <TextField
             required
+            fullWidth
             sx={{
-              pb: 4
+              px: 4,
+              py: 2
             }}
             id="name-textfield"
-            label="Name"
+            placeholder='Name'
             value={name}
             onChange={(e) => setName(e.target.value)}
             InputProps={{
@@ -127,13 +147,15 @@ export default function Contact() {
           <br/>
           <TextField
             required
+            fullWidth
             error={emailError}
             sx={{
-              pb: 4
+              px: 4,
+              py: 2
             }}
             id="email-textfield"
             helperText={emailHelperText}
-            label="Email"
+            placeholder='Email'
             value={email}
             onChange={(e) => emailIsValid(e.target.value)}
             InputProps={{
@@ -148,13 +170,15 @@ export default function Contact() {
           <br/>
           <TextField
             required
+            fullWidth
             error={phoneError}
             sx={{
-              
+              px: 4,
+              py: 2
             }}
             id="phone-textfield"
             helperText={phoneHelperText}
-            label="Phone Number"
+            placeholder='Phone Number'
             value={phone}
             onChange={(e) => phoneIsValid(e.target.value)}
             InputProps={{
@@ -173,17 +197,17 @@ export default function Contact() {
             multiline
             rows={4}
             sx={{
-              p: 2
+              px: 4,
+              py: 2
             }}
             id="projectDetails-textfield"
             placeholder="Provide us any details about your project."
-            label="Project Details"
             value={projectDetails}
             onChange={(e) => setProjectDetails(e.target.value)}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
-                  <EditNote />
+                  <Article />
                 </InputAdornment>
               ),
             }}
