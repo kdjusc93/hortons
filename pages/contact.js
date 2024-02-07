@@ -19,7 +19,7 @@ export default function Contact(props) {
           my: 8, 
           borderRadius: 2, 
           padding: '1%', 
-          border: 2,
+          border: '4px solid',
           borderColor: '#358f7a' // primary wasn't working so just did hex
         }}
       >
