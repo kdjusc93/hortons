@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import CheckIcon from '@mui/icons-material/Check';
 
 function WovenImageList() {
   return (
@@ -67,7 +68,7 @@ export default function About() {
           backgroundColor: 'lightgray', 
           my: 8, 
           borderRadius: 2, 
-          padding: '1%',
+          padding: '2%',
           border: '4px solid',
           borderColor: '#358f7a'
         }}
@@ -93,6 +94,28 @@ export default function About() {
           }}
         >
         With over 10 years of experience in the construction trade, I offer a wide range of services in the Marietta area. From minor electrical work like installing new receptacles, ceiling fans, and lights, to minor plumbing tasks such as sink and faucet replacements, I've got you covered. Need help with gutter cleaning or installation? I can handle that too! Plus, I specialize in home repairs, including door installation, LVP floor installation, picture and TV hanging, furniture assembly, and general clean up. Don't forget, I also do interior and exterior painting! Rest assured, I am insured. Feel free to reach out for a free estimate. Let's get your honey-do list done!
+        </Typography>
+        <Typography 
+          textAlign="left"
+          sx={{
+            pt: 2,
+            pb: 1,
+            fontWeight : '400',
+            fontSize: '20px'
+          }}
+        >
+          <CheckIcon style={{ color: '#50c878', transform: 'scale(1.5)'}}/> <b>Open 24/7</b>
+        </Typography>
+        <Typography 
+          textAlign="left"
+          sx={{
+            pt: 2,
+            pb: 1,
+            fontWeight : '400',
+            fontSize: '20px'
+          }}
+        >
+          <CheckIcon style={{ color: '#50c878', transform: 'scale(1.5)'}}/> <b>Accepts Credit Cards</b>
         </Typography>
         <WovenImageList/>
       </Box>
