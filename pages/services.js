@@ -13,6 +13,10 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import FolderIcon from '@mui/icons-material/Folder';
+import { Card, CardContent, CardActions } from '@mui/material';
+import { ContactPage, Handyman } from '@mui/icons-material';
+
+
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
 
@@ -66,14 +70,14 @@ export default function Services() {
         >
           Home Repair
         </Typography>
-        <Grid item xs={12}>
+        <Grid item xs={12} >
             <List dense='true'>
             <ListItem>
                   <ListItemIcon>
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Door Installation"
                   />
                 </ListItem>
                 <ListItem>
@@ -81,7 +85,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="LVP Floor Installation"
                   />
                 </ListItem>
                 <ListItem>
@@ -89,7 +93,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Picture Hanging"
                   />
                 </ListItem>
                 <ListItem>
@@ -97,7 +101,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="TV Hanging"
                   />
                 </ListItem>
                 <ListItem>
@@ -105,7 +109,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="TV Mounts"
                   />
                 </ListItem>
                 <ListItem>
@@ -113,7 +117,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Furniture Assembly"
                   />
                 </ListItem>
                 <ListItem>
@@ -121,7 +125,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Moving Furniture"
                   />
                 </ListItem>
                 <ListItem>
@@ -129,7 +133,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="General Clean Up"
                   />
                 </ListItem>
                 <ListItem>
@@ -137,7 +141,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Interior Painting"
                   />
                 </ListItem>
                 <ListItem>
@@ -145,7 +149,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Exterior Painting"
                   />
                 </ListItem>
             </List>
@@ -173,7 +177,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="New Receptacles"
                   />
                 </ListItem>
                 <ListItem>
@@ -181,7 +185,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Ceiling fans"
                   />
                 </ListItem>
                 <ListItem>
@@ -189,7 +193,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Lights"
                   />
                 </ListItem>
                 </List>
@@ -216,7 +220,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Sink Replacement"
                   />
                 </ListItem>
                 <ListItem>
@@ -224,7 +228,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Faucet Replacement"
                   />
                 </ListItem>
                 <ListItem>
@@ -232,7 +236,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Faucet Repair"
                   />
                 </ListItem>
                 </List></Grid>
@@ -258,7 +262,7 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Gutter Cleaning"
                   />
                 </ListItem>
                 <ListItem>
@@ -266,13 +270,41 @@ export default function Services() {
                     <TaskAltIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Single-line item"
+                    primary="Gutter Installation"
                   />
                 </ListItem>
                 </List>
                 </Grid>
         </Item>
         </Grid>
+        <Card maxWidth="md" sx={{ 
+          mb: 4, 
+          mt: 4,
+          borderRadius: 2, 
+          padding: '1%',
+          border: '4px solid',
+          borderColor: '#358f7a'
+        }}>
+        <CardContent>
+          <Typography 
+            gutterBottom 
+            variant="h3" 
+            component="div"
+            fontWeight='bold'
+          >
+            Get Your Free Estimate!
+          </Typography>
+          <Typography variant="h6" color="text.secondary">
+          In and around the home we've got you covered! 
+          Contact us below to get your next project started!
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button variant="contained" component={Link} href="/contact" startIcon={<ContactPage />}>
+            Contact Us
+          </Button>
+        </CardActions>
+      </Card>
       </Grid>
     </Box>
       </Box>
