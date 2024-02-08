@@ -7,14 +7,11 @@ import Link from '../src/Link';
 import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 import { Card, CardContent, CardActions } from '@mui/material';
-import { ContactPage, Handyman } from '@mui/icons-material';
+import { ContactPage, Handyman, House, ElectricalServices, Plumbing, Roofing } from '@mui/icons-material';
 import ContactForm from '../src/ContactForm';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import ListSubheader from '@mui/material/ListSubheader';
-import IconButton from '@mui/material/IconButton';
-import InfoIcon from '@mui/icons-material/Info';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import { Article } from '@mui/icons-material';
 
 
 export default function Index() {
@@ -22,27 +19,27 @@ export default function Index() {
   const formSubmitText = "Thank you for reaching out to us. Make sure to send the email we created for you. We will make sure to reach out to you soon!"
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const itemData = [
+  const servicesData = [
     {
-      img: 'home_repair.png',
+      id: 1,
       title: 'Home Repair',
-      rows: 1,
-      cols: 4,
-      featured: true,
+      icon: <House sx={{fontSize: 54}}/>,
     },
     {
-      img: 'minor_electrical.png',
+      id: 2,
       title: 'Electrical',
+      icon: <ElectricalServices sx={{fontSize: 54}}/>,
     },
     {
-      img: 'minor_plumbing.png',
+      id: 3,
       title: 'Plumbing',
+      icon: <Plumbing sx={{fontSize: 54}}/>,
     },
     {
-      img: 'gutter_cleaning.png',
+      id: 4,
       title: 'Gutter Cleaning',
-      cols: 4,
-    }
+      icon: <Roofing sx={{fontSize: 54}}/>,
+    },
   ]
 
   return (
@@ -112,74 +109,73 @@ export default function Index() {
       <br/>
     </Container>
     {/************** Services Section **************/}
-    <Container maxWidth="lg" sx={{minHeight: '600px'}}>
-      <Typography 
-        variant="h3" 
-        component="h1" 
-        sx={{
-          pt: 2,
-          pb: 4,
-          textAlign: 'center'
-        }}
-      >
-        Services
-      </Typography>
-      <Divider variant="middle" component="h1" sx={{ mb: 6 }}/>
-      <ImageList 
-        sx={{ 
-          width: 'inherit', 
-          height: 'inherit'
-        }}>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img} sx={{ m: 2 }}>
-            <img
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              alt={item.title}
-              loading="lazy"
-            />
-            <ImageListItemBar
-              title={item.title}
-              subtitle={item.author}
-              sx={{
-                "& .MuiImageListItemBar-title": { fontSize: "1.5rem" }, //styles for title
-              }}
-              actionIcon={
-                <IconButton
-                  sx={{ color: 'rgba(255, 255, 255, 0.7)' }}
-                  aria-label={`info about ${item.title}`}
-                  href="/services"
-                >
-                  <InfoIcon />
-                </IconButton>
-              }
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
-      {/* <Box 
+    <Container 
+      maxWidth={false} 
+      sx={{
+        minHeight: '300px', 
+        width: '100%', 
+        margin: '0px', 
+        marginBottom: '100px',
+        backgroundColor: 'white'
+      }} 
+      disableGutters
+    >
+      <Box 
         sx={{
           textAlign: 'center',
-          backgroundColor: 'lightgray', 
+          backgroundImage: 'url(/tools.jpg)',
+          boxShadow: 'inset 0 0 0 1000px rgba(53, 143, 122, .9)',
+          backgroundRepeat: 'no-repeat',
           my: 8, 
-          borderRadius: 2, 
-          padding: '1%',
-          border: '4px solid',
-          borderColor: '#358f7a'
+          backgroundSize: 'cover',
         }}
       >
         <Typography 
           variant="h3" 
           component="h1" 
-          gutterBottom
           sx={{
-            pt: 2,
-            pb: 4
+            pt: 4,
+            pb: 4,
+            textAlign: 'center',
+            fontWeight: 'bold'
           }}
         >
-          Section
+          Services
         </Typography>
-      </Box> */}
+        <Grid container sx={{textAlign: 'center'}} spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 4, md: 8 }}>
+          {servicesData.map((service) => (
+            <Grid item xs={2} sm={4} md={4} key={service.id}>
+              <Box
+                sx={{
+                  pb: 4
+                }}
+              >
+                {service.icon}
+                <Typography 
+                  variant="h6" 
+                  sx={{
+                    pt: 2,
+                    textAlign: 'center',
+                    fontWeight: 'bolder'
+                  }}
+                >
+                  {service.title}
+                </Typography>
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+        <Button 
+          variant="contained" 
+          color='secondary'
+          component={Link} 
+          href="/services" 
+          // startIcon={<Handyman />}
+          sx={{mb: 6}}
+        >
+          Click Here for More Details
+        </Button>
+      </Box>
     </Container>
     {/************** Contact Form Section **************/}
     <Container maxWidth="md" sx={{minHeight: '600px'}}>
