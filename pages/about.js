@@ -61,7 +61,7 @@ const itemData = [
 
 export default function About() {
   return (
-    <Container maxWidth="md" sx={{minHeight: '600px'}}>
+    <Container maxWidth="lg" sx={{minHeight: '600px'}}>
       <Box 
         sx={{
           textAlign: 'center',

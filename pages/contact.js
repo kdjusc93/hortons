@@ -11,7 +11,7 @@ export default function Contact(props) {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   return (
-    <Container maxWidth="md" sx={{minHeight: '600px'}}>
+    <Container maxWidth="lg" sx={{minHeight: '600px'}}>
       <Box 
         sx={{
           textAlign: 'center',

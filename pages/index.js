@@ -178,7 +178,7 @@ export default function Index() {
       </Box>
     </Container>
     {/************** Contact Form Section **************/}
-    <Container maxWidth="md" sx={{minHeight: '600px'}}>
+    <Container maxWidth="lg" sx={{minHeight: '600px'}}>
       <Box 
         sx={{
           textAlign: 'center',

@@ -31,7 +31,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Services() {
   return (
-    <Container maxWidth="md" sx={{minHeight: '800px'}}>
+    <Container maxWidth="lg" sx={{minHeight: '800px'}}>
       <Box 
         sx={{
           textAlign: 'center',
@@ -55,10 +55,10 @@ export default function Services() {
           What We Offer
         </Typography>
         <br/> 
-        <Box sx={{ width: '100%', padding: '30px'}}>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1 }} >
+        <Box sx={{ width: '100%', padding: '20px'}}>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1 }}>
         <Grid xs={12} md={6} display="flex" justifyContent="center" alignItems="center" textAlign="center">
-          <Item sx={{ minHeight: '550px', maxWidth: '400px', border: '4px solid #358f7a'}}>
+          <Item sx={{ minHeight: '550px', width: '90%', border: '4px solid #358f7a'}} >
           <Typography 
           variant="h3" 
           component="h1" 
@@ -158,7 +158,7 @@ export default function Services() {
           </Item>
         </Grid>
         <Grid xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
-        <Item sx={{ minHeight: '550px', maxWidth: '400px', border: '4px solid #358f7a'}}>
+        <Item sx={{ minHeight: '550px', width: '90%', border: '4px solid #358f7a'}}>
         <Typography 
           variant="h3" 
           component="h1" 
@@ -201,7 +201,7 @@ export default function Services() {
         </Item>
         </Grid>
         <Grid xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
-        <Item sx={{ minHeight: '550px', maxWidth: '400px', border: '4px solid #358f7a'}}>
+        <Item sx={{ minHeight: '550px', width: '90%', border: '4px solid #358f7a'}}>
         <Typography 
           variant="h3" 
           component="h1" 
@@ -243,7 +243,7 @@ export default function Services() {
         </Item>
         </Grid>
         <Grid xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
-        <Item sx={{ minHeight: '550px', maxWidth: '400px', border: '4px solid #358f7a'}}>
+        <Item sx={{ minHeight: '550px', width: '90%', border: '4px solid #358f7a'}}>
         <Typography 
           variant="h3" 
           component="h1" 
@@ -277,13 +277,13 @@ export default function Services() {
                 </Grid>
         </Item>
         </Grid>
-        <Card maxWidth="md" sx={{ 
-          mb: 4, 
-          mt: 4,
+        <Grid xs={12} display="flex" justifyContent="center" alignItems="center">
+        <Card maxWidth="lg" display="flex" justifyContent="center" alignItems="center" sx={{ 
           borderRadius: 2, 
           padding: '1%',
           border: '4px solid',
-          borderColor: '#358f7a'
+          borderColor: '#358f7a',
+          width: '90%'
         }}>
         <CardContent>
           <Typography 
@@ -305,6 +305,8 @@ export default function Services() {
           </Button>
         </CardActions>
       </Card>
+        </Grid>
+        
       </Grid>
     </Box>
       </Box>
