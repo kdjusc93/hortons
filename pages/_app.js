@@ -14,7 +14,8 @@ export default function MyApp(props) {
   return (
     <AppCacheProvider {...props}>
       <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        {/* <meta name="viewport" content="initial-scale=1, width=device-width" /> */}
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
