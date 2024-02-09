@@ -45,19 +45,21 @@ export default function Index() {
     <Container 
       maxWidth={false} 
       sx={{
-        minHeight: '300px', 
+        minHeight: '300px',
+        maxHeight: '500px',
         width: '100%', 
         margin: '0px', 
         marginBottom: '100px',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        overflow: 'auto'
       }} 
       disableGutters
     >
       <Box 
         sx={{
           backgroundImage: 'url(/stylish_home2.png)',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'repeat-y',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',
           backgroundSize: 'cover', 
           height: '500px', 
