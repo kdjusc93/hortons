@@ -206,7 +206,18 @@ export default function Index() {
         >
           Contact Us
         </Typography>
-        { formSubmitted ? <div>{formSubmitText}</div> :
+        { formSubmitted ? 
+          <Typography 
+            variant="h6" 
+            component="h6" 
+            gutterBottom
+            sx={{
+              px: 4,
+              pb: 2
+            }}
+          >
+            {formSubmitText}
+          </Typography> :
           <ContactForm setFormSubmitted={setFormSubmitted}/>
         }
       </Box>

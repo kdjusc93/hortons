@@ -7,7 +7,7 @@ import ContactForm from '../src/ContactForm';
 
 export default function Contact(props) {
 
-  const formSubmitText = "Thank you for reaching out to us. Make sure to send the email we created for you. We will make sure to reach out to you soon!"
+  const formSubmitText = "Thank you for reaching out to us. We will make sure to reach out to you soon!"
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   return (
@@ -63,20 +63,35 @@ export default function Contact(props) {
           borderColor: '#358f7a' // primary wasn't working so just did hex
         }}
       >
-        <Typography 
-          variant="h3" 
-          component="h1" 
-          gutterBottom
-          sx={{
-            px: 4,
-            py: 2
-          }}
-        >
-          Get your Free Quote Now!
-        </Typography>
-        { formSubmitted ? <div>{formSubmitText}</div> :
-          <ContactForm setFormSubmitted={setFormSubmitted}/>
+        { formSubmitted ? 
+          <Typography 
+            variant="h6" 
+            component="h6" 
+            gutterBottom
+            sx={{
+              px: 4,
+              py: 2
+            }}
+          >
+            {formSubmitText}
+          </Typography>
+        :
+          <>
+            <Typography 
+              variant="h3" 
+              component="h1" 
+              gutterBottom
+              sx={{
+                px: 4,
+                py: 2
+              }}
+            >
+              Get your Free Quote Now!
+            </Typography>
+            <ContactForm setFormSubmitted={setFormSubmitted}/>
+          </>
         }
+        
       </Box>
     </Container>
     </>
