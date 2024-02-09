@@ -63,7 +63,6 @@ export default function Index() {
           backgroundSize: 'cover', 
           height: '500px', 
           width: '100%', 
-          paddingLeft: '0px', 
           margin: '0px', 
           position: 'relative',
         }}
