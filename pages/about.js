@@ -2,66 +2,49 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import CheckIcon from '@mui/icons-material/Check';
+import { Lock, Schedule, Construction, Payments } from '@mui/icons-material';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import { Grid, Avatar, Divider } from '@mui/material';
 
-function WovenImageList() {
-  return (
-    <ImageList sx={{ width: '100%', height: 500 }} variant="woven" cols={2} gap={4}>
-      {itemData.map((item) => (
-        <ImageListItem key={item.img}>
-          <img
-            srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
-            src={`${item.img}?w=161&fit=crop&auto=format`}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
-  );
-}
 
-const itemData = [
+
+const servicesData = [
   {
-    img: 'https://s3-media0.fl.yelpcdn.com/bphoto/pHWJ32V2TGMJhqNRibqq4Q/348s.jpg',
-    title: '',
+    id: 1,
+    title: 'Insured',
+    icon: <Lock sx={{fontSize: 54, color: '#358f7a'}}/>,
   },
   {
-    img: 'https://s3-media0.fl.yelpcdn.com/bphoto/RcpL-qx6uMIc0LInLpMhUQ/348s.jpg',
-    title: '',
+    id: 2,
+    title: 'Flexible Scheduling',
+    icon: <Schedule sx={{fontSize: 54, color: '#358f7a'}}/>,
   },
   {
-    img: 'https://s3-media0.fl.yelpcdn.com/bphoto/M7xHd04UdKzyfR3Tyx38-g/348s.jpg',
-    title: '',
+    id: 3,
+    title: '10+ Year Experience',
+    icon: <Construction sx={{fontSize: 54, color: '#358f7a'}}/>,
   },
   {
-    img: 'https://s3-media0.fl.yelpcdn.com/bphoto/TnLagk106FkCw9xKulo9gQ/348s.jpg',
-    title: '',
+    id: 4,
+    title: 'Accept Wide Range of Payments',
+    icon: <Payments sx={{fontSize: 54, color: '#358f7a'}}/>,
   },
-  {
-    img: 'https://s3-media0.fl.yelpcdn.com/bphoto/Oi8bnMP7r4tP-nfDxo-vdA/348s.jpg',
-    title: '',
-  },
-  {
-    img: 'https://s3-media0.fl.yelpcdn.com/bphoto/x7JasK1svqQrc83WFDDmKg/348s.jpg',
-    title: '',
-  },
-  {
-    img: 'https://s3-media0.fl.yelpcdn.com/bphoto/hVE4RQ_dZy2L3CH6GGgxUA/348s.jpg',
-    title: '',
-  },
-  {
-    img: 'https://s3-media0.fl.yelpcdn.com/bphoto/0bVvLFwO1MrOQ1T7XNkpbQ/348s.jpg',
-    title: '',
-  }
 ];
 
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+  width: '400px',
+}));
+
 export default function About() {
+
   return (
-    <>
+    <React.Fragment>
     {/************** Header Section **************/}
     <Container 
       maxWidth={false} 
@@ -77,13 +60,11 @@ export default function About() {
         sx={{
           backgroundImage: 'url(/tools.jpg)',
           boxShadow: 'inset 0 0 0 1000px rgba(53, 143, 122, .9)',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
+         backgroundPosition: 'cover',
+          backgroundRepeat: 'no-repeat no-repeat',
           backgroundSize: 'cover', 
-          height: '200px', 
+          minHeight: '200px', 
           width: '100%', 
-          position: 'relative',
           textAlign: 'center',
           pt: '35px', // needed to vertically center
         }}
@@ -114,53 +95,65 @@ export default function About() {
           borderColor: '#358f7a'
         }}
       >
-        {/* <Typography 
+        <Grid container xs={12}>
+          <Grid item xs={12} display="flex" justifyContent="center" alignItems="center" textAlign="center">
+            <Avatar
+              alt="Home Repair Image"
+              src='/nickHeadshot.png'
+              sx={{ width: 275, height: 275, border: '6px solid #358f7a' }}
+            />
+          </Grid>
+        </Grid>
+        <Typography 
           variant="h3" 
           component="h1" 
+          gutterBottom
           sx={{
             pt: 2,
-            pb: 1
+            // fontWeight: 'bold'
           }}
         >
-          About Us
+          Meet the Owner
         </Typography>
-        <br/> */}
+        <Divider variant='middle' color='#358f7a' sx={{ mb: 2 }}></Divider>
         <Typography  
           gutterBottom
           sx={{
             pt: 1,
+            px: 6,
             pb: 4,
             fontWeight : '400',
-            fontSize: '20px'
+            fontSize: '18px',
+            textAlign: 'left'
           }}
         >
-        With over 10 years of experience in the construction trade, I offer a wide range of services in the Marietta area. From electrical work like installing new receptacles, ceiling fans, and lights, to plumbing tasks such as sink and faucet replacements, I've got you covered. Need help with gutter cleaning or installation? I can handle that too! Plus, I specialize in home repairs, including door installation, LVP floor installation, picture and TV hanging, furniture assembly, and general clean up. Don't forget, I also do interior and exterior painting! Rest assured, I am insured. Feel free to reach out for a free estimate. Let's get your honey-do list done!
+          Hi I'm Nicholas! With over 10 years of experience in the construction trade, I offer a wide range of services in the Marietta area. From electrical work like installing new receptacles, ceiling fans, and lights, to plumbing tasks such as sink and faucet replacements, I've got you covered. Need help with gutter cleaning or installation? I can handle that too! Plus, I specialize in home repairs, including door installation, LVP floor installation, picture and TV hanging, furniture assembly, and general clean up. Don't forget, I also do interior and exterior painting! Rest assured, I am insured. Feel free to reach out for a free estimate. Let's get your honey-do list done!
         </Typography>
-        <Typography 
-          textAlign="left"
-          sx={{
-            pt: 2,
-            pb: 1,
-            fontWeight : '400',
-            fontSize: '20px'
-          }}
+        <Grid 
+          container 
+          sx={{ textAlign: 'center' }} 
+          columns={{ xs: 12, sm: 4, md: 8 }}
         >
-          <CheckIcon style={{ color: '#50c878', transform: 'scale(1.5)'}}/> <b>Open 24/7</b>
-        </Typography>
-        <Typography 
-          textAlign="left"
-          sx={{
-            pt: 2,
-            pb: 1,
-            fontWeight : '400',
-            fontSize: '20px'
-          }}
-        >
-          <CheckIcon style={{ color: '#50c878', transform: 'scale(1.5)'}}/> <b>Accepts Credit Cards</b>
-        </Typography>
-        <WovenImageList/>
+          {servicesData.map((service) => (
+            <Grid item xs={12} sm={4} md={4} key={service.id}>
+              <Box sx={{ pb: 4 }}>
+                {service.icon}
+                <Typography 
+                  variant="h6" 
+                  sx={{
+                    pt: 2,
+                    textAlign: 'center',
+                    fontWeight: 'bolder'
+                  }}
+                >
+                  {service.title}
+                </Typography>
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
       </Box>
     </Container>
-    </>
+    </React.Fragment>
   );
 }

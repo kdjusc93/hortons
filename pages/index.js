@@ -38,7 +38,7 @@ export default function Index() {
       title: 'Gutter Cleaning',
       icon: <Roofing sx={{fontSize: 54, color: 'white'}}/>,
     },
-  ]
+  ];
 
   return (
     <React.Fragment>
@@ -77,7 +77,7 @@ export default function Index() {
           marginTop: '100px',
           position: 'absolute', 
           // height: '200px', 
-          minWidth: 'xs',
+          // minWidth: 'xs',
           maxWidth: 'sm', 
           padding: '10px'
         }}>
