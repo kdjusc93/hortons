@@ -65,6 +65,8 @@ export default function Index() {
           width: '100%', 
           margin: '0px', 
           position: 'relative',
+          overflowY: 'scroll',
+          maxHeight: '70vh'
         }}
       >
       <Card 
