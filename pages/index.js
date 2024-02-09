@@ -11,6 +11,7 @@ import ContactForm from '../src/ContactForm';
 import Grid from '@mui/material/Grid';
 
 
+
 export default function Index() {
 
   const formSubmitText = "Thank you for reaching out to us. Make sure to send the email we created for you. We will make sure to reach out to you soon!"
@@ -45,13 +46,11 @@ export default function Index() {
     <Container 
       maxWidth={false} 
       sx={{
-        minHeight: '300px',
-        maxHeight: '500px',
+        minHeight: '300px', 
         width: '100%', 
         margin: '0px', 
         marginBottom: '100px',
-        backgroundColor: 'white',
-        overflow: 'auto'
+        backgroundColor: 'white'
       }} 
       disableGutters
     >
