@@ -57,9 +57,10 @@ export default function Index() {
       <Box 
         sx={{
           backgroundImage: 'url(/stylish_home2.png)',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat no-repeat',
+          backgroundAttachment: {xs: 'scroll', sm: 'fixed'},
+
           backgroundSize: 'cover', 
           height: '500px', 
           width: '100%', 
