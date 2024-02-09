@@ -53,20 +53,17 @@ export default function Services() {
           backgroundSize: 'cover', 
           height: '200px', 
           width: '100%', 
-          paddingLeft: '0px', 
-          margin: '0px', 
           position: 'relative',
+          textAlign: 'center',
         }}
       >
         <Typography 
-          variant="h3" 
+          variant="h2" 
           component="h1" 
           sx={{
             py: 4,
-            pl: '5%',
-            textAlign: 'left',
-            alignContent: 'center',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            color: 'white'
           }}
         >
           Services

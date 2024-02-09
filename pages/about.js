@@ -61,19 +61,59 @@ const itemData = [
 
 export default function About() {
   return (
-    <Container maxWidth="lg" sx={{minHeight: '600px'}}>
+    <>
+    {/************** Header Section **************/}
+    <Container 
+      maxWidth={false} 
+      sx={{
+        minHeight: '300px', 
+        width: '100%', 
+        margin: '0px', 
+        backgroundColor: 'white'
+      }} 
+      disableGutters
+    >
+      <Box 
+        sx={{
+          backgroundImage: 'url(/tools.jpg)',
+          boxShadow: 'inset 0 0 0 1000px rgba(53, 143, 122, .9)',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover', 
+          height: '200px', 
+          width: '100%', 
+          position: 'relative',
+          textAlign: 'center',
+        }}
+      >
+        <Typography 
+          variant="h2" 
+          component="h1" 
+          sx={{
+            py: 4,
+            fontWeight: 'bold',
+            color: 'white'
+          }}
+        >
+          About Us
+        </Typography>
+      </Box>
+      <br/>
+    </Container>
+    <Container maxWidth="lg" sx={{minHeight: '800px'}}>
       <Box 
         sx={{
           textAlign: 'center',
           backgroundColor: 'lightgray', 
-          my: 8, 
+          mb: 8, 
           borderRadius: 2, 
           padding: '2%',
           border: '4px solid',
           borderColor: '#358f7a'
         }}
       >
-        <Typography 
+        {/* <Typography 
           variant="h3" 
           component="h1" 
           sx={{
@@ -83,7 +123,7 @@ export default function About() {
         >
           About Us
         </Typography>
-        <br/>
+        <br/> */}
         <Typography  
           gutterBottom
           sx={{
@@ -120,5 +160,6 @@ export default function About() {
         <WovenImageList/>
       </Box>
     </Container>
+    </>
   );
 }
