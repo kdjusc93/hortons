@@ -46,14 +46,13 @@ export default function Services() {
         sx={{
           backgroundImage: 'url(/tools.jpg)',
           boxShadow: 'inset 0 0 0 1000px rgba(53, 143, 122, .9)',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
+         backgroundPosition: 'cover',
+          backgroundRepeat: 'no-repeat no-repeat',
           backgroundSize: 'cover', 
-          height: '200px',
+          minHeight: '200px', 
+          width: '100%', 
+          textAlign: 'center',
           pt: '35px', // needed to vertically center
-          position: 'relative',
-          textAlign: 'center'
         }}
       >
         <Typography 
