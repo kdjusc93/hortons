@@ -90,7 +90,7 @@ function Footer(props) {
             </Grid>
             <Grid container item spacing={1}>
               <Grid item xs={12} sm={12} md={12}>
-              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>&copy; Copyright 2024</Typography>
+              <Typography sx={{ color: '#fff', alignContent: 'center', justifyContent: 'center', display: 'flex' }}>&copy; Copyright 2024 Horton’s Honey-Do and Handyman Service LLC</Typography>
               </Grid>
             </Grid>
           </Grid>
