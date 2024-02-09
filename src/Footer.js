@@ -82,7 +82,7 @@ function Footer(props) {
               aria-label="open drawer"
               edge="start"
             >
-              <a style={{ textDecoration: 'none', color: 'white' }} href="mailto:abc@example.com"><MailOutlineIcon/></a>
+              <a style={{ textDecoration: 'none', color: 'white' }} href="mailto:nrhorton432@gmail.com"><MailOutlineIcon/></a>
                
             </IconButton>
                 </Typography>
