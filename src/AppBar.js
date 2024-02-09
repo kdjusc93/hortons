@@ -16,7 +16,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 
 const drawerWidth = 240;
-const businessNameShrt = "Horton\'s Honey-Do"
 const logoAltText = "Horton\'s Honey-Do and Handyman Services Logo"
 
 const links = [
@@ -78,7 +77,7 @@ function ResponsiveAppBar(props) {
           m: 2
         }}
         alt={logoAltText}
-        src="/logo_TextOnly.png"
+        src="/logoTextOnly.png"
       />
       <Divider />
       <List >
@@ -139,7 +138,7 @@ function ResponsiveAppBar(props) {
                 display: { xs: 'none', sm: 'block' }
               }}
               alt={logoAltText}
-              src="/logo_TextOnly.png"
+              src="/logoTextOnly.png"
             />
             <Typography
               variant="h6"
