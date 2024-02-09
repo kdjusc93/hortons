@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import { AccountCircle, Article, Email, Phone } from '@mui/icons-material';
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm({setFormSubmitted}) {
+
     const [name, setName] = useState('');
     // Email
     const [email, setEmail] = useState('');
@@ -32,7 +34,7 @@ export default function ContactForm({setFormSubmitted}) {
         }
     
         return emailValid;
-      }
+    }
     
       const phoneIsValid = (phone) => {
         
@@ -66,26 +68,40 @@ export default function ContactForm({setFormSubmitted}) {
         fullBodyText += `Phone: ${phone}`;
     
         // Must URL encode newlines for mailto later
-        return fullBodyText.replaceAll('\n', urlEncodedNewline);
+        // return fullBodyText.replaceAll('\n', urlEncodedNewline);
+        return fullBodyText;
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
     
         const isValid = !(emailError) & !(phoneError);
+
+        const serviceid = 'service_vn65ahu';
+        const templateid = 'template_dtny15n';
+        const publickey = 'IM9FbppDvsaclACXy';
+
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            to_name: 'Nicholas @ Horton\'s Handyman Services',
+            message: emailBodyBuilder(projectDetails, email, phone),
+        }
+        
     
         if(isValid) {
-          const businessEmail = 'nrhorton432@gmail.com'
-          const emailSubject = `Contact Us Form Submission from -- ${name}`;
-          const emailBody = `${projectDetails}`;
-    
-          console.log('Form Submitted!!');
-    
-          console.log(`Name: ${name}`);
-          console.log(`Email: ${email}`);
-          console.log(`Phone: ${phone}`);
-    
-          window.open(`mailto:${businessEmail}?subject=${emailSubject}&body=${emailBodyBuilder(projectDetails, email, phone)}`);
+          
+          emailjs.send(serviceid, templateid, templateParams, publickey)
+            .then((response) => {
+                console.log('Email sent successfully!', response),
+                setName('');
+                setEmail('');
+                setPhone('');
+                setProjectDetails('');
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error)
+            })
     
           setFormSubmitted(true);
         }
@@ -187,7 +203,7 @@ export default function ContactForm({setFormSubmitted}) {
         variant="contained" 
         type='submit'
         sx={{
-            mb: 2
+            mb: 4
         }}
         >Submit</Button>
         <br/>
