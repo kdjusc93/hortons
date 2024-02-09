@@ -12,7 +12,6 @@ export default function Contact(props) {
 
   return (
     <>
-     {/************** Header Section **************/}
      <Container 
       maxWidth={false} 
       sx={{
