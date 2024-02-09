@@ -85,6 +85,7 @@ export default function About() {
           width: '100%', 
           position: 'relative',
           textAlign: 'center',
+          pt: '35px', // needed to vertically center
         }}
       >
         <Typography 

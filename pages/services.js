@@ -53,6 +53,7 @@ export default function Services() {
           height: '200px',
           pt: '35px', // needed to vertically center
           position: 'relative',
+          textAlign: 'center'
         }}
       >
         <Typography 
@@ -60,10 +61,8 @@ export default function Services() {
           component="h1" 
           sx={{
             py: 4,
-            pl: '5%',
-            textAlign: 'center',
-            alignContent: 'center',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            color: 'white'
           }}
         >
           Services

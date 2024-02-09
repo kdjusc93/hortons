@@ -11,7 +11,48 @@ export default function Contact(props) {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   return (
-    <Container maxWidth="lg" sx={{minHeight: '600px'}}>
+    <>
+     {/************** Header Section **************/}
+     <Container 
+      maxWidth={false} 
+      sx={{
+        minHeight: '300px', 
+        width: '100%', 
+        margin: '0px', 
+        backgroundColor: 'white'
+      }} 
+      disableGutters
+    >
+      <Box 
+        sx={{
+          backgroundImage: 'url(/tools.jpg)',
+          boxShadow: 'inset 0 0 0 1000px rgba(53, 143, 122, .9)',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover', 
+          height: '200px', 
+          width: '100%', 
+          position: 'relative',
+          textAlign: 'center',
+          pt: '35px', // needed to vertically center
+        }}
+      >
+        <Typography 
+          variant="h2" 
+          component="h1" 
+          sx={{
+            py: 4,
+            fontWeight: 'bold',
+            color: 'white'
+          }}
+        >
+          Contact Us
+        </Typography>
+      </Box>
+      <br/>
+    </Container>
+    <Container maxWidth="lg" sx={{minHeight: '800px'}}>
       <Box 
         sx={{
           textAlign: 'center',
@@ -32,12 +73,13 @@ export default function Contact(props) {
             py: 2
           }}
         >
-          Contact Us
+          Get your Free Quote Now!
         </Typography>
         { formSubmitted ? <div>{formSubmitText}</div> :
           <ContactForm setFormSubmitted={setFormSubmitted}/>
         }
       </Box>
     </Container>
+    </>
   );
 }
