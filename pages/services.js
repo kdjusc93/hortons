@@ -9,12 +9,12 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import FolderIcon from '@mui/icons-material/Folder';
 import { Card, CardContent, CardActions } from '@mui/material';
-import { ContactPage, Handyman } from '@mui/icons-material';
+import { ContactPage } from '@mui/icons-material';
+import Avatar from '@mui/material/Avatar';
+import Divider from '@mui/material/Divider';
 
 
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
@@ -38,7 +38,6 @@ export default function Services() {
       sx={{
         minHeight: '300px', 
         width: '100%', 
-        margin: '0px', 
         backgroundColor: 'white'
       }} 
       disableGutters
@@ -51,20 +50,18 @@ export default function Services() {
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',
           backgroundSize: 'cover', 
-          height: '200px', 
-          width: '100%', 
-          paddingLeft: '0px', 
-          margin: '0px', 
+          height: '200px',
+          pt: '35px', // needed to vertically center
           position: 'relative',
         }}
       >
         <Typography 
-          variant="h3" 
+          variant="h2" 
           component="h1" 
           sx={{
             py: 4,
             pl: '5%',
-            textAlign: 'left',
+            textAlign: 'center',
             alignContent: 'center',
             fontWeight: 'bold'
           }}
@@ -74,195 +71,223 @@ export default function Services() {
       </Box>
       <br/>
     </Container>
-    <Container maxWidth="lg" sx={{minHeight: '800px'}}>
+    <Container maxWidth={false} disableGutters sx={{ minHeight: '800px', width: '100%' }}>
       <Box 
         sx={{
           textAlign: 'center',
-          backgroundColor: 'lightgray', 
           mb: 8, 
-          borderRadius: 2, 
+          width: '100%',
           padding: '1%',
-          border: '4px solid',
           borderColor: '#358f7a'
         }}
       >
-        <Typography 
-          variant="h3" 
-          component="h1" 
-          gutterBottom
-          sx={{
-            pt: 2,
-            pb: 4
-          }}
-        >
-          What We Offer
-        </Typography>
         <br/> 
-        <Box sx={{ width: '100%', padding: '20px'}}>
+        {/* <Box sx={{ width: '100%', padding: '20px'}}> */}
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1 }}>
         <Grid xs={12} md={6} display="flex" justifyContent="center" alignItems="center" textAlign="center">
-          <Item sx={{ minHeight: '550px', width: '90%', border: '4px solid #358f7a'}} >
+          <Item sx={{ minHeight: '550px', width: '90%', maxWidth: '690px', border: '4px solid #358f7a', bgcolor: '#358f7a', mb: '20px'}}>
+          <Grid container xs={12}>
+            <Grid item xs={12} display="flex" justifyContent="center" alignItems="center" textAlign="center">
+              <Avatar
+                alt="Home Repair Image"
+                src='/home_repair.png'
+                sx={{ width: 175, height: 175, border: '2px solid #333333' }}
+              />
+            </Grid>
+          </Grid>
           <Typography 
-          variant="h3" 
-          component="h1" 
-          gutterBottom
-          sx={{
-            pt: 2,
-            pb: 4
-          }}
-        >
+            variant="h3" 
+            component="h1" 
+            gutterBottom
+            sx={{
+              pt: 2,
+              color: 'white',
+              fontWeight: 'bold'
+            }}
+          >
           Home Repair
         </Typography>
+        <Divider variant='middle' color='#57d6b9'></Divider>
         <Grid item xs={12} >
-            <List dense='true'>
+          <List dense='true'>
             <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Door Installation"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="LVP Floor Installation"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Picture Hanging"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="TV Hanging"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="TV Mounts"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Furniture Assembly"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Moving Furniture"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="General Clean Up"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Interior Painting"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Exterior Painting"
-                  />
-                </ListItem>
-            </List>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="Door Installation"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="LVP Floor Installation"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="Picture Hanging"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="TV Hanging"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="TV Mounts"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="Furniture Assembly"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="Moving Furniture"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="General Clean Up"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="Interior Painting"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="Exterior Painting"
+              />
+            </ListItem>
+          </List>
         </Grid>
-        
           </Item>
         </Grid>
         <Grid xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
-        <Item sx={{ minHeight: '550px', width: '90%', border: '4px solid #358f7a'}}>
+        <Item sx={{ minHeight: '550px', width: '90%', maxWidth: '690px', border: '4px solid #358f7a', bgcolor: '#358f7a', mb: '20px'}}>
+        <Grid container xs={12}>
+            <Grid item xs={12} display="flex" justifyContent="center" alignItems="center" textAlign="center">
+              <Avatar
+                alt="Electrical Repair Image"
+                src='/minor_electrical.png'
+                sx={{ width: 175, height: 175, border: '2px solid #333333' }}
+              />
+            </Grid>
+          </Grid>
         <Typography 
           variant="h3" 
           component="h1" 
           gutterBottom
           sx={{
-            pt: 2,
-            pb: 4
+            color: 'white',
+            fontWeight: 'bold'
           }}
         >
           Electrical
         </Typography>
+        <Divider variant='middle' color='#57d6b9'></Divider>
         <Grid item xs={12}>
-            <List dense='true'>
+          <List dense='true'>
             <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="New Receptacles"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Ceiling fans"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Lights"
-                  />
-                </ListItem>
-                </List>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="New Receptacles"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="Ceiling fans"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <TaskAltIcon />
+              </ListItemIcon>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                primary="Lights"
+              />
+            </ListItem>
+            <ListItem><br></br></ListItem>
+            <ListItem><br></br></ListItem>
+            <ListItem><br></br></ListItem>
+            <ListItem><br></br></ListItem>
+            <ListItem><br></br></ListItem>
+            <ListItem><br></br></ListItem>
+            <ListItem><br></br></ListItem>
+            <ListItem><br></br></ListItem>
+            <ListItem><br></br></ListItem>
+            <ListItem><br></br></ListItem>
+            <ListItem><br></br></ListItem>
+          </List>
         </Grid>
         </Item>
         </Grid>
         <Grid xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
-        <Item sx={{ minHeight: '550px', width: '90%', border: '4px solid #358f7a'}}>
+        <Item sx={{ minHeight: '550px', width: '90%', maxWidth: '690px', border: '4px solid #358f7a', bgcolor: '#358f7a', mb: '20px'}}>
+        <Grid container xs={12}>
+            <Grid item xs={12} display="flex" justifyContent="center" alignItems="center" textAlign="center">
+              <Avatar
+                alt="Plumbing Repair Image"
+                src='/minor_plumbing.png'
+                sx={{ width: 175, height: 175, border: '2px solid #333333' }}
+              />
+            </Grid>
+          </Grid>
         <Typography 
           variant="h3" 
           component="h1" 
           gutterBottom
           sx={{
-            pt: 2,
-            pb: 4
+            color: 'white',
+            fontWeight: 'bold'
           }}
         >
         Plumbing
         </Typography>
+        <Divider variant='middle' color='#57d6b9'></Divider>
         <Grid item xs={12}>
             <List dense='true'>
             <ListItem>
                   <ListItemIcon>
                     <TaskAltIcon />
                   </ListItemIcon>
-                  <ListItemText
+                  <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
                     primary="Sink Replacement"
                   />
                 </ListItem>
@@ -270,7 +295,7 @@ export default function Services() {
                   <ListItemIcon>
                     <TaskAltIcon />
                   </ListItemIcon>
-                  <ListItemText
+                  <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
                     primary="Faucet Replacement"
                   />
                 </ListItem>
@@ -278,51 +303,63 @@ export default function Services() {
                   <ListItemIcon>
                     <TaskAltIcon />
                   </ListItemIcon>
-                  <ListItemText
+                  <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
                     primary="Faucet Repair"
                   />
                 </ListItem>
-                </List></Grid>
+                </List>
+          </Grid>
         </Item>
         </Grid>
         <Grid xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
-        <Item sx={{ minHeight: '550px', width: '90%', border: '4px solid #358f7a'}}>
-        <Typography 
-          variant="h3" 
-          component="h1" 
-          gutterBottom
-          sx={{
-            pt: 2,
-            pb: 4
-          }}
-        >
-          Gutters
-        </Typography>
-        <Grid item xs={12}>
+        <Item sx={{ minHeight: '550px', width: '90%', maxWidth: '690px', border: '4px solid #358f7a', bgcolor: '#358f7a', mb: '20px'}}>
+        <Grid container xs={12}>
+            <Grid item xs={12} display="flex" justifyContent="center" alignItems="center" textAlign="center">
+              <Avatar
+                alt="Gutters Cleaning Image"
+                src='gutter_cleaning.png'
+                sx={{ width: 175, height: 175, border: '2px solid #333333' }}
+              />
+            </Grid>
+          </Grid>
+          <Typography 
+            variant="h3" 
+            component="h1" 
+            gutterBottom
+            sx={{
+              color: 'white',
+              fontWeight: 'bold'
+            }}
+          >
+            Gutters
+          </Typography>
+          <Divider variant='middle' color='#57d6b9'></Divider>
+          <Grid item xs={12}>
             <List dense='true'>
-            <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Gutter Cleaning"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <TaskAltIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Gutter Installation"
-                  />
-                </ListItem>
-                </List>
-                </Grid>
+              <ListItem>
+                <ListItemIcon>
+                  <TaskAltIcon />
+                </ListItemIcon>
+                <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                  primary="Gutter Cleaning"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <TaskAltIcon />
+                </ListItemIcon>
+                <ListItemText primaryTypographyProps={{fontSize: '18px'}} sx={{ color: 'white' }}
+                  primary="Gutter Installation"
+                />
+              </ListItem>              
+            </List>
+          </Grid>
         </Item>
         </Grid>
         <Grid xs={12} display="flex" justifyContent="center" alignItems="center">
         <Card maxWidth="lg" display="flex" justifyContent="center" alignItems="center" sx={{ 
           borderRadius: 2, 
+          mt: '60px',
           padding: '1%',
           border: '4px solid',
           borderColor: '#358f7a',
@@ -342,7 +379,11 @@ export default function Services() {
           Contact us below to get your next project started!
           </Typography>
         </CardContent>
-        <CardActions>
+        <CardActions
+          sx={{
+            justifyContent: 'center'
+          }}
+        >
           <Button variant="contained" component={Link} href="/contact" startIcon={<ContactPage />}>
             Contact Us
           </Button>
@@ -352,7 +393,6 @@ export default function Services() {
         
       </Grid>
     </Box>
-      </Box>
     </Container>
     </>
   );

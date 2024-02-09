@@ -4,14 +4,11 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Link from '../src/Link';
-import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 import { Card, CardContent, CardActions } from '@mui/material';
 import { ContactPage, Handyman, House, ElectricalServices, Plumbing, Roofing } from '@mui/icons-material';
 import ContactForm from '../src/ContactForm';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import { Article } from '@mui/icons-material';
 
 
 export default function Index() {
@@ -23,22 +20,22 @@ export default function Index() {
     {
       id: 1,
       title: 'Home Repair',
-      icon: <House sx={{fontSize: 54}}/>,
+      icon: <House sx={{fontSize: 54, color: 'white'}}/>,
     },
     {
       id: 2,
       title: 'Electrical',
-      icon: <ElectricalServices sx={{fontSize: 54}}/>,
+      icon: <ElectricalServices sx={{fontSize: 54, color: 'white'}}/>,
     },
     {
       id: 3,
       title: 'Plumbing',
-      icon: <Plumbing sx={{fontSize: 54}}/>,
+      icon: <Plumbing sx={{fontSize: 54, color: 'white'}}/>,
     },
     {
       id: 4,
       title: 'Gutter Cleaning',
-      icon: <Roofing sx={{fontSize: 54}}/>,
+      icon: <Roofing sx={{fontSize: 54, color: 'white'}}/>,
     },
   ]
 
@@ -142,7 +139,12 @@ export default function Index() {
         >
           Services
         </Typography>
-        <Grid container sx={{textAlign: 'center'}} spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 4, md: 8 }}>
+        <Grid 
+          container 
+          sx={{ textAlign: 'center' }} 
+          // spacing={{ xs: 2, md: 3 }} 
+          columns={{ xs: 2, sm: 4, md: 8 }}
+        >
           {servicesData.map((service) => (
             <Grid item xs={2} sm={4} md={4} key={service.id}>
               <Box
@@ -196,7 +198,8 @@ export default function Index() {
           gutterBottom
           sx={{
             px: 4,
-            py: 2
+            py: 2,
+            fontWeight: 'bold'
           }}
         >
           Contact Us
