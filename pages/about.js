@@ -6,7 +6,8 @@ import { Lock, Schedule, Construction, Payments } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { Grid, Avatar, Divider } from '@mui/material';
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 
 const servicesData = [
@@ -60,7 +61,7 @@ export default function About() {
         sx={{
           backgroundImage: 'url(/tools.jpg)',
           boxShadow: 'inset 0 0 0 1000px rgba(53, 143, 122, .9)',
-         backgroundPosition: 'cover',
+          backgroundPosition: 'cover',
           backgroundRepeat: 'no-repeat no-repeat',
           backgroundSize: 'cover', 
           minHeight: '200px', 
@@ -88,7 +89,7 @@ export default function About() {
         sx={{
           textAlign: 'center',
           backgroundColor: 'lightgray', 
-          mb: 8, 
+          mb: 20, 
           borderRadius: 2, 
           padding: '2%',
           border: '4px solid',
@@ -154,6 +155,43 @@ export default function About() {
         </Grid>
       </Box>
     </Container>
-    </React.Fragment>
+    <Container maxWidth="lg" sx={{minHeight: '800px'}}>
+      <Box 
+        sx={{
+          textAlign: 'center',
+          mb: 20, 
+          padding: '2%',
+        }}
+      >
+        <Typography 
+          variant="h3" 
+          component="h1" 
+          gutterBottom
+          sx={{
+            pt: 2,
+            // fontWeight: 'bold'
+          }}
+        >
+          Past Projects
+        </Typography>
+        <Divider variant='middle' color='#358f7a' sx={{ mb: 2 }}></Divider>
+          <Carousel
+            autoPlay
+            showArrows
+            showThumbs={false}
+          >
+            <div>
+              <img src="/barnSideBeforeAfter.png" />
+            </div>
+            <div>
+              <img src="/basementBeforeAfter.png" />
+            </div>
+            <div>
+              <img src="/barnFrontBeforeAfter.png" />
+            </div>
+          </Carousel>
+        </Box>
+      </Container>
+  </React.Fragment>
   );
 }
